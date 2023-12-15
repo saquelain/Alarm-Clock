@@ -98,6 +98,9 @@ function setAlarm(){
 
         deleteBtn.addEventListener('click', ()=> {
             alarmDivElement.remove();
+            alarms = alarms.filter((a) => {
+                return !(a.hour == alarm.hour && a.minute == alarm.minute && a.ampm == alarm.ampm);
+            });
         })
 
         // add alarmtime and deletebtn to alarm
